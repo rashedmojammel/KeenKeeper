@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Aisha Rahman",
+    "picture": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=300&h=300&fit=crop&crop=face&ixlib=rb-4.1.0",
+    "email": "aisha.rahman@gmail.com",
+    "days_since_contact": 22,
+    "status": "overdue",
+    "tags": ["college", "travel buddy"],
+    "bio": "Met during undergrad in Dhaka. We bonded over weekend trips to Cox's Bazar.",
+    "goal": 14,
+    "next_due_date": "2026-04-05"
+  },
+  {
+    "id": 2,
+    "name": "Raj Patel",
+    "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9hKK0n80bfsarzLuH-G3MVqm4ulsz9dd3ZQ&s",
+    "email": "raj.patel85@yahoo.com",
+    "days_since_contact": 5,
+    "status": "on-track",
+    "tags": ["work", "gaming"],
+    "bio": "Colleague from my first job in IT. We crush online multiplayer games weekly.",
+    "goal": 10,
+    "next_due_date": "2026-04-25"
+  },
+  {
+    "id": 3,
+    "name": "Maria Gonzalez",
+    "picture": "https://terracesmiles.com/wp-content/uploads/2016/10/eight.jpg",
+    "email": "maria.gonzalez92@outlook.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["childhood", "family"],
+    "bio": "Neighbor from growing up in the same Dhaka apartment block. She's like a sister.",
+    "goal": 21,
+    "next_due_date": "2026-03-28"
+  },
+  {
+    "id": 4,
+    "name": "Liam Chen",
+    "picture": "https://iruvijayanathan.com/wp-content/uploads/2016/10/download-8.jpg",
+    "email": "liam.chen.dev@gmail.com",
+    "days_since_contact": 9,
+    "status": "almost due",
+    "tags": ["gym", "close friend"],
+    "bio": "Met at the local gym two years ago. Spot each other on bench presses and chat life.",
+    "goal": 14,
+    "next_due_date": "2026-04-20"
+  },
+  {
+    "id": 5,
+    "name": "Fatima Khan",
+    "picture": "https://www.qtrainers.com/upload/profile/160/2020/02/profile_35405e4683b309238.jpg",
+    "email": "fatima.khan@university.edu",
+    "days_since_contact": 3,
+    "status": "on-track",
+    "tags": ["college", "study group"],
+    "bio": "Current classmate in my master's program. We review notes over chai every weekend.",
+    "goal": 7,
+    "next_due_date": "2026-04-22"
+  },
+  {
+    "id": 6,
+    "name": "Carlos Rivera",
+    "picture": "https://www.alucoildesign.com/assets/pages/media/profile/profile_user.jpg",
+    "email": "carlos.rivera@freelance.com",
+    "days_since_contact": 25,
+    "status": "overdue",
+    "tags": ["freelance", "music"],
+    "bio": "Collaborated on a web design gig last year. Jam to guitar sessions when we connect.",
+    "goal": 30,
+    "next_due_date": "2026-03-25"
+  },
+  {
+    "id": 7,
+    "name": "Sophie Leclerc",
+    "picture": "https://img.freepik.com/free-photo/close-up-young-successful-entrepreneur_176420-16057.jpg?w=300&h=300&fit=crop",
+    "email": "sophie.leclerc@expat.net",
+    "days_since_contact": 11,
+    "status": "almost due",
+    "tags": ["expat", "book club"],
+    "bio": "French expat I met through a Dhaka book club. Discuss thrillers over coffee.",
+    "goal": 14,
+    "next_due_date": "2026-04-18"
+  },
+  {
+    "id": 8,
+    "name": "Omar Siddiqui",
+    "picture": "https://img.freepik.com/free-photo/brunet-man-wearing-checkered-shirt_273609-19684.jpg?w=300&h=300&fit=crop",
+    "email": "omar.siddiqui@startup.bd",
+    "days_since_contact": 7,
+    "status": "on-track",
+    "tags": ["entrepreneur", "mentor"],
+    "bio": "Founder who mentored me during my first pitch competition. Grabs lunch to brainstorm.",
+    "goal": 10,
+    "next_due_date": "2026-04-24"
+  }
+]
