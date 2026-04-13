@@ -2,8 +2,8 @@ import React, { use } from 'react';
 
 const FriendCardPromise = fetch('/data.json').then(res => res.json());
 const status = {
-  'overdue':     'bg-orange-100 text-orange-600',
-  'almost due':         'bg-red-100 text-red-600',
+  'overdue': 'bg-orange-100 text-orange-600',
+  'almost due':'bg-red-100 text-red-600',
   'on-track': 'bg-green-100 text-green-600',
 }
 

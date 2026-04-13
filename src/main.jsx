@@ -6,6 +6,7 @@ import { createBrowserRouter } from 'react-router';
 import { RouterProvider } from 'react-router/dom';
 import MainLayout from './assets/Layout/MainLayout.jsx';
 import Hompage from './assets/Pages/Hompage.jsx';
+import Stats from './assets/Components/Stats/Stats.jsx';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path : "/stats",
-        element : <div>stats</div>
+        Component : Stats
       },
 
 
