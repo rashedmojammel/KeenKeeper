@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram, FaTwitter, FaX } from 'react-icons/fa6';
 const Footer = () => {
     return (
         <footer className='w-full bg-[#244d3f] '>
-             <div className=' w-11/12 mx-auto text-center justify-center  text-white py-10 space-x-3.5 mt-10 rounded-lg flex flex-col md: gap-5'>
+             <div className=' w-11/12 mx-auto text-center justify-center mt-4 text-white py-10 space-x-3.5 rounded-lg flex flex-col md: gap-5'>
             <div className='space-y-3'>
             <h1 className='text-5xl'>KeenKeeper</h1>
             <p>Your personal shelf of meaningful connections. Browse, tend, and nurture the relationships that matter most.</p>
