@@ -6,9 +6,9 @@ const getallTimelineFromLocalDB = () => {
 const addTimelineToLocalDB = (item) => {
   const alltimeline = getallTimelineFromLocalDB();
 
-  alltimeline.push(item);
+  const updated = [item, ...alltimeline]; 
 
-  localStorage.setItem("timeline", JSON.stringify(alltimeline));
+  localStorage.setItem("timeline", JSON.stringify(updated));
 };
 
 export { getallTimelineFromLocalDB, addTimelineToLocalDB };

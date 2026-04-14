@@ -8,13 +8,12 @@ export const FriendsContext = createContext();
 const FriendsProvider = ({ children }) => {
   const [storedTimeline, setStroredTimeline] = useState([]);
 
-  // 🔄 Load from localStorage on first render
+
   useEffect(() => {
     const data = getallTimelineFromLocalDB();
     setStroredTimeline(data);
   }, []);
 
-  // 📞 CALL
   const handleCall = (friend) => {
     const newItem = {
       type: "Call",
@@ -22,7 +21,7 @@ const FriendsProvider = ({ children }) => {
       date: new Date().toLocaleTimeString(),
     };
 
-    setStroredTimeline((prev) => [...prev, newItem]);
+    setStroredTimeline((prev) => [newItem, ...prev]);
     addTimelineToLocalDB(newItem);
 
     toast(
@@ -33,7 +32,6 @@ const FriendsProvider = ({ children }) => {
     );
   };
 
-  // 💬 TEXT
   const handleText = (friend) => {
     const newItem = {
       type: "Text",
@@ -41,7 +39,7 @@ const FriendsProvider = ({ children }) => {
       date: new Date().toLocaleTimeString(),
     };
 
-    setStroredTimeline((prev) => [...prev, newItem]);
+    setStroredTimeline((prev) => [newItem, ...prev]);
     addTimelineToLocalDB(newItem);
 
     toast(
@@ -52,7 +50,6 @@ const FriendsProvider = ({ children }) => {
     );
   };
 
-  // 🎥 VIDEO
   const handleVideo = (friend) => {
     const newItem = {
       type: "Video",
@@ -60,7 +57,7 @@ const FriendsProvider = ({ children }) => {
       date: new Date().toLocaleTimeString(),
     };
 
-    setStroredTimeline((prev) => [...prev, newItem]);
+    setStroredTimeline((prev) => [newItem, ...prev]);
     addTimelineToLocalDB(newItem);
 
     toast(
