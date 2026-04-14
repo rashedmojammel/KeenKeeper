@@ -11,11 +11,15 @@ const FriendDetails = () => {
     console.log(id);
 
     const friendContext = useContext(FriendsContext);
-    console.log(friendContext);
+    console.log(friendContext , "from friend details");
 
     const friends = useLoaderData();
     console.log(friends);
 
+    const { handleCall, handleText, handleVideo } = useContext(FriendsContext);
+    console.log(handleCall, handleText, handleVideo , "from friend details");
+
+   
     const expectedFriend = friends.find(friend => friend.id === Number(id));
     console.log(expectedFriend);    
     return (
@@ -66,22 +70,6 @@ const FriendDetails = () => {
         
       </div>
     </div>
-
-     {/* {
-    "id": 4,
-    "name": "Liam Chen",
-    "picture": "https://iruvijayanathan.com/wp-content/uploads/2016/10/download-8.jpg",
-    "email": "liam.chen.dev@gmail.com",
-    "days_since_contact": 9,
-    "status": "almost due",
-    "tags": ["gym", "close friend"],
-    "bio": "Met at the local gym two years ago. Spot each other on bench presses and chat life.",
-    "goal": 14,
-    "next_due_date": "2026-04-20"
-  }, */}
-    
-
-
 
     {/* Buttons */}
     <div className="rounded-xl p-3 space-y-2 text-sm">
@@ -139,9 +127,9 @@ const FriendDetails = () => {
       <h2 className="mb-3 font-semibold">Quick Check-In</h2>
 
       <div className="grid grid-cols-3 gap-4">
-        <button className="btn flex flex-col p-10 text-xl"><span><FaPhone></FaPhone></span> Call</button>
-        <button className="btn flex flex-col p-10 text-xl"><span><FaComment></FaComment></span> Text</button>
-        <button className="btn flex flex-col p-10 text-xl"><span><FaVideo></FaVideo></span  > Video</button>
+        <button onClick={() => handleCall(expectedFriend)} className="btn flex flex-col p-10 text-xl"><span><FaPhone></FaPhone></span> Call</button>
+        <button onClick={() => handleText(expectedFriend)} className="btn flex flex-col p-10 text-xl"><span><FaComment></FaComment></span> Text</button>
+        <button onClick={() => handleVideo(expectedFriend)} className="btn flex flex-col p-10 text-xl"><span><FaVideo></FaVideo></span  > Video</button>
       </div>
     </div>
 
