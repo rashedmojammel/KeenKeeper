@@ -4,6 +4,7 @@ import Timeline from "../assets/Components/Timeline/Timeline";
 import Stats from "../assets/Components/Stats/Stats";
 import { createBrowserRouter } from "react-router";
 import FriendDetails from "../assets/Pages/FriendDetails/FriendDetails";
+import notfound from "../assets/NotFound/notfound";
 
 
 export const router = createBrowserRouter([
@@ -34,8 +35,14 @@ export const router = createBrowserRouter([
         loader : () => fetch("/data.json"),
       },
 
-
+      
     ]
+    
 
   },
+  {
+        path : "*",
+        Component : notfound,
+   },
+
 ]);
