@@ -39,7 +39,7 @@ const FriendDetails = () => {
         />
       </figure>
 
-      <div className="card-body items-center text-center p-4">
+      <div className="card-body items-center text-center p-6">
         <h2 className="card-title">{expectedFriend.name}</h2>
 
         <span
