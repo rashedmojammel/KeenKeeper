@@ -8,49 +8,56 @@ import { NavLink } from 'react-router';
 const Navbar = () => {
 
   const links = (
-            <>
-           <li>
-  <NavLink
-    to="/"
-    className={({ isActive }) =>
-      `mr-2 p-1 flex items-center gap-1 ${
-        isActive ? "text-white border border-green-800 bg-green-900 rounded-sm" : ""
-      }`
-    }
-  >
-    <FaHouse />
-    Home
-  </NavLink>
-</li>
-   <li>
-  <NavLink
-    to="/timeline"
-    className={({ isActive }) =>
-      `mr-2 p-1 flex items-center gap-1 ${
-        isActive ? "text-white border border-green-800 bg-green-900 rounded-sm" : ""
-      }`
-    }
-  >
-    <RiTimeLine/>
-    Timeline
-  </NavLink>
-</li>
-   <li>
-  <NavLink
-    to="/stats"
-    className={({ isActive }) =>
-      `mr-2 p-1 flex items-center gap-1 ${
-        isActive ? "text-white border border-green-800 bg-green-900 rounded-sm" : ""
-      }`
-    }
-  >
-    <BiStats />
-    Stats
-  </NavLink>
-</li>
-         
-            </>
-        )
+  <>
+    <li>
+      <NavLink
+        to="/"
+        className={({ isActive }) =>
+          `mr-2 px-3 py-1 flex items-center gap-2 rounded-md transition-all duration-300 ease-in-out ${
+            isActive
+              ? "text-white bg-green-900 shadow-md scale-105"
+              : "text-gray-300 hover:text-white hover:bg-green-800/40 hover:scale-105"
+          }`
+        }
+      >
+        <FaHouse />
+        Home
+      </NavLink>
+    </li>
+
+    <li>
+      <NavLink
+        to="/timeline"
+        className={({ isActive }) =>
+          `mr-2 px-3 py-1 flex items-center gap-2 rounded-md transition-all duration-300 ease-in-out ${
+            isActive
+              ? "text-white bg-green-900 shadow-md scale-105"
+              : "text-gray-300 hover:text-white hover:bg-green-800/40 hover:scale-105"
+          }`
+        }
+      >
+        <RiTimeLine />
+        Timeline
+      </NavLink>
+    </li>
+
+    <li>
+      <NavLink
+        to="/stats"
+        className={({ isActive }) =>
+          `mr-2 px-3 py-1 flex items-center gap-2 rounded-md transition-all duration-300 ease-in-out ${
+            isActive
+              ? "text-white bg-green-900 shadow-md scale-105"
+              : "text-gray-300 hover:text-white hover:bg-green-800/40 hover:scale-105"
+          }`
+        }
+      >
+        <BiStats />
+        Stats
+      </NavLink>
+    </li>
+  </>
+);
     
     return (
         <nav class=" bg-base-100 shadow-sm">
