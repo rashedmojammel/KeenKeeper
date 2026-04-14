@@ -34,8 +34,10 @@ export default function Stats() {
     }, [storedTimeline]);
 
     return (
-        <div className='bg-white rounded-3xl p-6 mt-5'>
-            <p className='text-sm text-gray-500 mb-4'>By Interaction Type</p>
+        <div className=' mt-5 w-9/12 mx-auto '>
+            <h1 className="text-3xl mb-5 font-semibold">Friendship Analytics</h1>
+            <div className='bg-white rounded-3xl p-6 shadow-sm'>
+                <p className='text-sm text-gray-500 mb-4'>By Interaction Type</p>
             <ResponsiveContainer width='100%' height={260}>
                 <PieChart>
                     <Pie
@@ -55,6 +57,9 @@ export default function Stats() {
                     <Legend content={<CustomLegend />} />
                 </PieChart>
             </ResponsiveContainer>
+
+            </div>
+            
         </div>
     );
 }
