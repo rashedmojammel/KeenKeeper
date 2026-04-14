@@ -1,70 +1,88 @@
-import React, { createContext, useState } from 'react';
-import { FaMessage, FaPhone, FaVideo } from 'react-icons/fa6';
-import { toast } from 'react-toastify';
+import React, { createContext, useEffect, useState } from "react";
+import { FaMessage, FaPhone, FaVideo } from "react-icons/fa6";
+import { toast } from "react-toastify";
+import { getallTimelineFromLocalDB, addTimelineToLocalDB } from "../Utils/LocalDb";
 
 export const FriendsContext = createContext();
 
+const FriendsProvider = ({ children }) => {
+  const [storedTimeline, setStroredTimeline] = useState([]);
 
+  // 🔄 Load from localStorage on first render
+  useEffect(() => {
+    const data = getallTimelineFromLocalDB();
+    setStroredTimeline(data);
+  }, []);
 
-const FriendsProvider = ({children}) => {
-     const [storedTimeline , setStroredTimeline] = useState([]);
+  // 📞 CALL
+  const handleCall = (friend) => {
+    const newItem = {
+      type: "Call",
+      name: friend.name,
+      date: new Date().toLocaleTimeString(),
+    };
 
-   const handleCall = (friend) => {
-    setStroredTimeline([...storedTimeline, {
-        type: "Call",
-        name: friend.name,
-        date: new Date().toLocaleTimeString()
-       
-    }]);
-     toast(
-  <div className="flex items-center gap-2">
-    <FaPhone />
-    <span>Calling {friend.name}</span>
-  </div>
-);
+    setStroredTimeline((prev) => [...prev, newItem]);
+    addTimelineToLocalDB(newItem);
 
-}
+    toast(
+      <div className="flex items-center gap-2">
+        <FaPhone className="text-green-400" />
+        Calling {friend.name}
+      </div>
+    );
+  };
 
-const handleText = (friend) => {
-    setStroredTimeline([...storedTimeline, {
-        type: "Text",
-        name: friend.name,
-        date: new Date().toLocaleTimeString()
-    }]);
-        toast(
-  <div className="flex items-center gap-2">
-    <FaMessage />
-    <span>Text sent to {friend.name}</span>
-  </div>
-);
+  // 💬 TEXT
+  const handleText = (friend) => {
+    const newItem = {
+      type: "Text",
+      name: friend.name,
+      date: new Date().toLocaleTimeString(),
+    };
 
-}
+    setStroredTimeline((prev) => [...prev, newItem]);
+    addTimelineToLocalDB(newItem);
 
-const handleVideo = (friend) => {
-    setStroredTimeline([...storedTimeline, {
-        type: "Video",
-        name: friend.name,
-        date: new Date().toLocaleTimeString()
-    }]);
-        toast(
-  <div className="flex items-center gap-2">
-    <FaVideo />
-    <span>Video call made to {friend.name}</span>
-  </div>
-);
-}
+    toast(
+      <div className="flex items-center gap-2">
+        <FaMessage className="text-blue-400" />
+        Text sent to {friend.name}
+      </div>
+    );
+  };
 
-    const data  ={
-        storedTimeline,
-        handleCall,
-        handleText,
-        handleVideo
+  // 🎥 VIDEO
+  const handleVideo = (friend) => {
+    const newItem = {
+      type: "Video",
+      name: friend.name,
+      date: new Date().toLocaleTimeString(),
+    };
 
-    }
-    return <FriendsContext.Provider value={data}>
+    setStroredTimeline((prev) => [...prev, newItem]);
+    addTimelineToLocalDB(newItem);
 
-        {children}
+    toast(
+      <div className="flex items-center gap-2">
+        <FaVideo className="text-purple-400" />
+        Video call made to {friend.name}
+      </div>
+    );
+  };
+
+  const data = {
+    storedTimeline,
+    handleCall,
+    handleText,
+    handleVideo,
+  };
+
+  return (
+    <FriendsContext.Provider value={data}>
+      {children}
     </FriendsContext.Provider>
+  );
 };
 
 export default FriendsProvider;
