@@ -1,4 +1,3 @@
-// import { createBrowserRouter } from "react-router";
 import MainLayout from "../assets/Layout/MainLayout";
 import Hompage from "../assets/Pages/Hompage";
 import Timeline from "../assets/Components/Timeline/Timeline";

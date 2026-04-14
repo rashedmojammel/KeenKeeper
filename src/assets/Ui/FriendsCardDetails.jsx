@@ -3,9 +3,9 @@ import { Link } from 'react-router';
 
 
 export const status = {
-  'overdue': 'bg-orange-100 text-orange-600',
-  'almost due':'bg-red-100 text-red-600',
-  'on-track': 'bg-green-100 text-green-600',
+  'overdue': 'bg-orange-500 text-white',
+  'almost due':'bg-red-500 text-white',
+  'on-track': 'bg-green-500 text-white',
 }
 
 const FriendsCardDetails = ({ friend, index }) => {

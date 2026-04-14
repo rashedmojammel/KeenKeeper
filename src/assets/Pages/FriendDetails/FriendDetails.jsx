@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaArchive } from 'react-icons/fa';
-import { FaTrash } from 'react-icons/fa6';
+import { FaComment, FaPhone, FaTrash, FaVideo } from 'react-icons/fa6';
 import { IoIosAlarm } from 'react-icons/io';
 import { useLoaderData, useParams } from 'react-router';
 import { status } from '../../Ui/FriendsCardDetails';
+import { FriendsContext } from '../../../Context/FriendsContext';
 
 const FriendDetails = () => {
     const { id } = useParams();
     console.log(id);
+
+    const friendContext = useContext(FriendsContext);
+    console.log(friendContext);
 
     const friends = useLoaderData();
     console.log(friends);
@@ -33,10 +37,14 @@ const FriendDetails = () => {
 
       <div className="card-body items-center text-center p-4">
         <h2 className="card-title">{expectedFriend.name}</h2>
-        <p className="text-sm text-gray-500">
-          {expectedFriend.days_since_contact} days ago
-        </p>
 
+        <span
+          className={`px-3 py-1 rounded-full text-sm mt-2 ${
+            status[expectedFriend.status]
+          }`}
+        >
+          {expectedFriend.status}
+        </span>
         {/* Tags */}
         <div className="flex flex-wrap justify-center gap-1 mt-2">
           {expectedFriend.tags.map((tag, i) => (
@@ -47,16 +55,15 @@ const FriendDetails = () => {
               {tag.toUpperCase()}
             </span>
           ))}
+        <p className="text-sm text-gray-500">{expectedFriend.bio}</p>
+        <p className="text-sm text-gray-500 mt-1">Email : {expectedFriend.email}</p>
+        
+
+        
         </div>
 
         {/* Status */}
-        <span
-          className={`px-3 py-1 rounded-full text-sm mt-2 ${
-            status[expectedFriend.status]
-          }`}
-        >
-          {expectedFriend.status}
-        </span>
+        
       </div>
     </div>
 
@@ -97,7 +104,7 @@ const FriendDetails = () => {
   <div className="col-span-4 flex flex-col gap-6">
 
     {/* TOP STATS */}
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-3 gap-4">
 
       <div className="bg-white shadow rounded-lg p-4 text-center">
         <h1 className="text-2xl font-bold">{expectedFriend.days_since_contact}</h1>
@@ -112,11 +119,6 @@ const FriendDetails = () => {
       <div className="bg-white shadow rounded-lg p-4 text-center">
         <h1 className="text-2xl font-bold">{expectedFriend.next_due_date}</h1>
         <p className="text-sm text-gray-500">Next Due</p>
-      </div>
-
-      <div className="bg-white shadow rounded-lg p-4 text-center">
-        <h1 className="text-2xl font-bold">{friends.length}</h1>
-        <p className="text-sm text-gray-500">Total Friends</p>
       </div>
 
     </div>
@@ -137,9 +139,9 @@ const FriendDetails = () => {
       <h2 className="mb-3 font-semibold">Quick Check-In</h2>
 
       <div className="grid grid-cols-3 gap-4">
-        <button className="btn">Call</button>
-        <button className="btn">Text</button>
-        <button className="btn">Video</button>
+        <button className="btn flex flex-col p-10 text-xl"><span><FaPhone></FaPhone></span> Call</button>
+        <button className="btn flex flex-col p-10 text-xl"><span><FaComment></FaComment></span> Text</button>
+        <button className="btn flex flex-col p-10 text-xl"><span><FaVideo></FaVideo></span  > Video</button>
       </div>
     </div>
 

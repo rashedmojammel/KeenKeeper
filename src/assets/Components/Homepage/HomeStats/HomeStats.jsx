@@ -1,23 +1,28 @@
 import React from 'react';
+import { useLoaderData } from 'react-router';
 
 const HomeStats = () => {
+  
+  const friendStats = useLoaderData();
+  console.log(friendStats);
+
     return (
         <div className='flex gap-5 w-11/12 mx-auto mt-8 flex-wrap justify-center border-b border-gray-300 pb-8'> 
             <div className="border-white bg-white shadow-lg rounded-lg flex flex-col items-center justify-center p-2 w-[200px] h-[100px]">
-  <h1 className="text-2xl font-bold">10</h1>
+  <h1 className="text-2xl font-bold">7</h1>
   <p className="text-sm text-gray-600">Total Friends</p>
 </div>
 <div className="border-white bg-white shadow-lg rounded-lg flex flex-col items-center justify-center p-2 w-[200px] h-[100px]">
-  <h1 className="text-2xl font-bold">10</h1>
-  <p className="text-sm text-gray-600">Total Friends</p>
+  <h1 className="text-2xl font-bold">6</h1>
+  <p className="text-sm text-gray-600">On Track</p>
 </div>
 <div className="border-white bg-white shadow-lg rounded-lg flex flex-col items-center justify-center p-2 w-[200px] h-[100px]">
-  <h1 className="text-2xl font-bold">10</h1>
-  <p className="text-sm text-gray-600">Total Friends</p>
+  <h1 className="text-2xl font-bold">5</h1>
+  <p className="text-sm text-gray-600">Need Attention</p>
 </div>
 <div className="border-white bg-white   shadow-lg rounded-lg flex flex-col items-center justify-center p-2 w-[200px] h-[100px]">
-  <h1 className="text-2xl font-bold">10</h1>
-  <p className="text-sm text-gray-600">Total Friends</p>
+  <h1 className="text-2xl font-bold">3</h1>
+  <p className="text-sm text-gray-600">Interaction This Month</p>
 </div>
           
         
