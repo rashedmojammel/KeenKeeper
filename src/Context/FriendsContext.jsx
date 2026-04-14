@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import { toast } from 'react-toastify';
 
 export const FriendsContext = createContext();
 
@@ -7,25 +8,33 @@ export const FriendsContext = createContext();
 const FriendsProvider = ({children}) => {
      const [storedTimeline , setStroredTimeline] = useState([]);
 
-    const handleCall = (friend) =>
-    {     console.log("call", friend.name);  
-          setStroredTimeline([...storedTimeline , `Called friend with id ${friend.id} at ${new Date().toLocaleTimeString()}`]);
-          alert(`Calling friend${friend.name}...`); // Simulate call action
+   const handleCall = (friend) => {
+    setStroredTimeline([...storedTimeline, {
+        type: "Call",
+        name: friend.name,
+        date: new Date().toLocaleTimeString()
+       
+    }]);
+     toast("Call made to " + friend.name);
+}
 
-    }
-    const handleText = (friend) =>
-    {     console.log("text", friend.name);  
-          setStroredTimeline([...storedTimeline , `Texted friend with id ${friend.id} at ${new Date().toLocaleTimeString()}`]);
-          alert(`Texting friend  ${friend.name}...`); // Simulate text action
+const handleText = (friend) => {
+    setStroredTimeline([...storedTimeline, {
+        type: "Text",
+        name: friend.name,
+        date: new Date().toLocaleTimeString()
+    }]);
+        toast("Text sent to " + friend.name);
+}
 
-    }
-    const handleVideo = (friend) =>
-    {     console.log("video", friend.name); 
-            setStroredTimeline([...storedTimeline , `Video called friend with id ${friend.id} at ${new Date().toLocaleTimeString()}`]);  
-            alert(`Video calling friend${friend.name}...`); // Simulate video call action   
-
-    }
-
+const handleVideo = (friend) => {
+    setStroredTimeline([...storedTimeline, {
+        type: "Video",
+        name: friend.name,
+        date: new Date().toLocaleTimeString()
+    }]);
+        toast("Video call made to " + friend.name);
+}
 
     const data  ={
         storedTimeline,
