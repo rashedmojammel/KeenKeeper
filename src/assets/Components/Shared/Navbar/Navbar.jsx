@@ -3,6 +3,7 @@ import { BiStats } from 'react-icons/bi';
 import { FaHouse } from 'react-icons/fa6';
 import { RiTimeLine } from 'react-icons/ri';
 import { NavLink } from 'react-router';
+// import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
 
