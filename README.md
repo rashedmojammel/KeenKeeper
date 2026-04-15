@@ -1,4 +1,4 @@
-<img width="1919" height="867" alt="image" src="https://github.com/user-attachments/assets/2f277432-ca67-403b-9caa-4ce514111f27" /># 🌿 KeenKeeper
+# 🌿 KeenKeeper
 
 KeenKeeper is a relationship management app that helps you stay intentional about the friendships that matter most. Set contact goals, track interactions, and get nudged before you drift apart from the people you care about.
 
