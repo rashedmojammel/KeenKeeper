@@ -1,12 +1,49 @@
-# React + Vite
+# 🌿 KeenKeeper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+KeenKeeper is a relationship management app that helps you stay intentional about the friendships that matter most. Set contact goals, track interactions, and get nudged before you drift apart from the people you care about.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Technologies Used
 
-## Expanding the ESLint configuration
+| Layer | Tools |
+|---|---|
+| **Framework** | React 19 (with `use()` hook & Suspense) |
+| **Routing** | React Router v7 |
+| **Styling** | Tailwind CSS v4 + DaisyUI |
+| **Charts** | Recharts |
+| **State** | React Context API |
+| **Persistence** | localStorage |
+| **Notifications** | React Toastify |
+| **Icons** | React Icons (FA6, BI, RI) |
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Key Features
+
+### 1. 📇 Friend Cards with Smart Status Tracking
+Each friend has a contact goal (in days). KeenKeeper automatically flags them as **On Track**, **Almost Due**, or **Overdue** — so you always know who needs your attention at a glance.
+
+### 2. 📅 Interaction Timeline
+Every call, text, or video session you log is stored in a filterable timeline. The history persists across sessions via localStorage, so your interaction log is always there when you need it.
+
+### 3. 📊 Friendship Analytics
+A live pie chart breaks down your communication habits by interaction type (Call, Text, Video), giving you a visual snapshot of how you're staying connected with your circle.
+
+---
+
+## 🚀 Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/your-username/keenkeeper.git
+cd keenkeeper
+
+# Install dependencies
+npm install
+
+# Start the dev server
+npm run dev
+```
+
+---
