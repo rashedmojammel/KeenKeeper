@@ -1,4 +1,4 @@
-# 🌿 KeenKeeper
+<img width="1919" height="867" alt="image" src="https://github.com/user-attachments/assets/2f277432-ca67-403b-9caa-4ce514111f27" /># 🌿 KeenKeeper
 
 KeenKeeper is a relationship management app that helps you stay intentional about the friendships that matter most. Set contact goals, track interactions, and get nudged before you drift apart from the people you care about.
 
@@ -31,7 +31,20 @@ Every call, text, or video session you log is stored in a filterable timeline. T
 A live pie chart breaks down your communication habits by interaction type (Call, Text, Video), giving you a visual snapshot of how you're staying connected with your circle.
 
 ---
-
+## ✨ Key Features
+---
+### 1. Top Page : 
+<img width="1919" height="524" alt="image" src="https://github.com/user-attachments/assets/d247ad4b-a9e6-46a2-a676-f3438214ced2" />
+### 2. Home Page : 
+<img width="1919" height="867" alt="image" src="https://github.com/user-attachments/assets/24ee58f8-5f2d-4b6c-a72b-a4292d2c36aa" />
+### 3. Footer  :
+<img width="1900" height="390" alt="image" src="https://github.com/user-attachments/assets/d3ba21c1-74c6-4fa1-8edc-88e198cc86c0" />
+### 4. Friend Details page  :
+<img width="1919" height="863" alt="image" src="https://github.com/user-attachments/assets/8c7b9471-dfdf-4b9b-96d9-54aa33b09ce9" />
+### 5. Timeline Page  :
+<img width="1919" height="869" alt="image" src="https://github.com/user-attachments/assets/b5f9228d-9c1c-47e0-9180-a2f0d3bc2e93" />
+### 6. Stats Page  :
+<img width="1919" height="629" alt="image" src="https://github.com/user-attachments/assets/4317c265-d846-4f8d-a554-549bb35f955d" />
 ## 🚀 Getting Started
 
 ```bash
