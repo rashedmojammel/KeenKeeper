@@ -35,16 +35,17 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="bg-base-100 shadow-sm">
+    <nav className="bg-base-100 shadow-sm sticky top-0 left-0 w-full z-50">
       <div className="navbar w-11/12 mx-auto">
 
-        {/* Logo */}
         <div className="navbar-start">
           <NavLink to="/" className="btn btn-ghost text-xl gap-0">
             <span className="text-2xl">Keen</span>
             <span className="text-green-900">Keeper</span>
           </NavLink>
         </div>
+       
+        
 
         {/* Desktop Links */}
         <div className="navbar-end hidden md:flex">

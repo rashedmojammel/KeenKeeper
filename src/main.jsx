@@ -14,7 +14,7 @@ import { ToastContainer } from 'react-toastify';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <FriendsProvider>
-      <RouterProvider router={router} />,
+      <RouterProvider router={router} />
       <ToastContainer
   position="top-center"
   autoClose={2500}
@@ -31,5 +31,5 @@ createRoot(document.getElementById('root')).render(
 
     </FriendsProvider>
     
-  </StrictMode>,
+  </StrictMode>
 )

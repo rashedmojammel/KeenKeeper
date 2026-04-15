@@ -5,12 +5,12 @@ import callIcon from '../../../../assets/call.png';
 import textIcon from '../../../../assets/text.png';
 import videoIcon from '../../../../assets/video.png';
 
-const typeIcons = {
+export const typeIcons = {
     "Call": callIcon,
     "Text": textIcon,
     "Video": videoIcon
 }
-const typeLabels = {
+export const typeLabels = {
     "Call": "Called",
     "Text": "Texted",
     "Video": "Video called"

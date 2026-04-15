@@ -2,21 +2,55 @@ import React, { useContext } from 'react';
 import { FaArchive } from 'react-icons/fa';
 import { FaComment, FaPhone, FaTrash, FaVideo } from 'react-icons/fa6';
 import { IoIosAlarm } from 'react-icons/io';
-import { useLoaderData, useParams } from 'react-router';
+import { Link, useLoaderData, useParams } from 'react-router';
 import { status } from '../../Ui/FriendsCardDetails';
 import { FriendsContext } from '../../../Context/FriendsContext';
+import { typeIcons, typeLabels } from '../../Components/Timeline/TimeLineCard/TimelineCard';
+import TimelineCard from '../../Components/Timeline/TimeLineCard/TimelineCard';
 
 const FriendDetails = () => {
     const { id } = useParams();
     const friends = useLoaderData();
-    const { handleCall, handleText, handleVideo } = useContext(FriendsContext);
+    const { handleCall, handleText, handleVideo, storedTimeline } = useContext(FriendsContext);
     const expectedFriend = friends.find(friend => friend.id === Number(id));
+    if (!expectedFriend) {
+  return (
+    <div className="bg-gray-100 min-h-screen flex items-center justify-center px-4">
+      
+      <div className="bg-white shadow-xl rounded-2xl p-10 text-center max-w-md w-full space-y-6">
+
+        <h1 className="text-3xl font-bold text-red-500">
+          Friend Not Found
+        </h1>
+        <p className="text-gray-500 text-sm">
+          The friend you are looking for might have been removed or the link is incorrect.
+        </p>
+        <Link
+          to="/"
+          className="btn bg-green-900 hover:bg-green-800 text-white px-6"
+        >
+          Go Back Home
+        </Link>
+
+      </div>
+
+    </div>
+  );
+}
+// 
+    // Filter timeline for this specific friend
+    const friendInteractions = storedTimeline.filter(item => item.name === expectedFriend.name);
+     
 
     return (
+        
+         
         <div className='bg-gray-100 min-h-screen'>
             <div className="w-10/12 mx-auto py-6">
 
-                {/* MOBILE: stacked, DESKTOP: sidebar + content */}
+            
+
+                
                 <div className="flex flex-col lg:grid lg:grid-cols-5 gap-6">
 
                     {/* LEFT SIDEBAR */}
@@ -52,7 +86,7 @@ const FriendDetails = () => {
                             </div>
                         </div>
 
-                        {/* Action Buttons */}
+            
                         <div className="rounded-xl p-3 space-y-2 text-sm">
                             <div className="flex items-center gap-2 bg-white cursor-pointer hover:bg-gray-100 p-2 rounded">
                                 <IoIosAlarm /> Snooze 2 Weeks
@@ -66,7 +100,7 @@ const FriendDetails = () => {
                         </div>
                     </div>
 
-                    {/* RIGHT CONTENT */}
+                   
                     <div className="lg:col-span-4 flex flex-col gap-6">
 
                         {/* TOP STATS */}
@@ -104,35 +138,42 @@ const FriendDetails = () => {
                                     onClick={() => handleCall(expectedFriend)}
                                     className="btn flex flex-col py-6 md:p-10 text-base md:text-xl"
                                 >
-                                    <FaPhone /> Call
+                                    <span><FaPhone /></span> Call
                                 </button>
                                 <button
                                     onClick={() => handleText(expectedFriend)}
                                     className="btn flex flex-col py-6 md:p-10 text-base md:text-xl"
                                 >
-                                    <FaComment /> Text
+                                    <span><FaComment /> </span>Text
                                 </button>
                                 <button
                                     onClick={() => handleVideo(expectedFriend)}
                                     className="btn flex flex-col py-6 md:p-10 text-base md:text-xl"
                                 >
-                                    <FaVideo /> Video
+                                    <span><FaVideo /></span> Video
                                 </button>
                             </div>
                         </div>
 
                         {/* RECENT INTERACTIONS */}
-                        <div className="bg-white shadow rounded-lg p-4 md:p-5">
+                        <div className="  rounded-lg p-4 md:p-5">
                             <div className="flex justify-between mb-3">
                                 <h2 className="font-semibold">Recent Interactions</h2>
-                                <button className="btn btn-xs">Full History</button>
+                                <Link to={`/timeline`} className="btn btn-xs">
+                                    Full History
+                                </Link>
                             </div>
-                            <div className="space-y-3 text-sm">
-                                <p>📩 Asked for career advice</p>
-                                <p>📞 Industry conference meetup</p>
-                                <p>🎥 Video call</p>
+                            <div className="bg-gray-100 space-y-3">
+                                {friendInteractions.length > 0 ? (
+                                    friendInteractions.slice(0, 5).map((interaction, index) => (
+                                        <TimelineCard key={index} item={interaction} />
+                                    ))
+                                ) : (
+                                    <p className="text-sm text-gray-500">No recent interactions with {expectedFriend.name}.</p>
+                                )}
                             </div>
                         </div>
+
 
                     </div>
                 </div>

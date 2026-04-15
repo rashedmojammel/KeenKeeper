@@ -2,6 +2,7 @@ import { useContext, useMemo } from 'react';
 import { PieChart, Pie, Cell, Legend, Tooltip, ResponsiveContainer } from 'recharts';
 
 import { FriendsContext } from '../../../Context/FriendsContext';
+import { FaSearch } from 'react-icons/fa';
 
 const COLORS = {
     Text:  '#8B5CF6',
@@ -38,6 +39,16 @@ export default function Stats() {
             <h1 className="text-3xl mb-5 font-semibold">Friendship Analytics</h1>
             <div className='bg-white rounded-3xl p-6 shadow-sm'>
                 <p className='text-sm text-gray-500 mb-4'>By Interaction Type</p>
+            <div>
+                {storedTimeline.length === 0 ? (
+                    <div className=' text-black bg-white rounded-3xl'>
+                        <p className='flex justify-center items-center gap-3'>
+                            <FaSearch/>
+                            No interactions found.
+                        </p>
+                    </div>
+                ) : null}
+            </div>
             <ResponsiveContainer width='100%' height={260}>
                 <PieChart>
                     <Pie
@@ -56,7 +67,10 @@ export default function Stats() {
                     <Tooltip formatter={(value, name) => [`${value} interactions`, name]} />
                     <Legend content={<CustomLegend />} />
                 </PieChart>
+                
             </ResponsiveContainer>
+            
+           
 
             </div>
             
