@@ -30,11 +30,10 @@ const FriendsCardDetails = ({ friend, index }) => {
             <div className="flex flex-wrap justify-center gap-1">
               {
                 friend.tags.map((tag, i) => (
-                  <Suspense key={i} fallback={<div>Loading...</div>}>
+                  
                   <span key={i} className='text-[10px] bg-green-300 rounded-2xl px-2 py-1 text-black text-center'>
                     {tag.toUpperCase()}
                   </span>
-                  </Suspense>
                 ))
               }
             </div>
