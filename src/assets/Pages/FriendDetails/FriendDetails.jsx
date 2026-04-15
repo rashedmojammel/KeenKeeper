@@ -5,7 +5,7 @@ import { IoIosAlarm } from 'react-icons/io';
 import { Link, useLoaderData, useParams } from 'react-router';
 import { status } from '../../Ui/FriendsCardDetails';
 import { FriendsContext } from '../../../Context/FriendsContext';
-import { typeIcons, typeLabels } from '../../Components/Timeline/TimeLineCard/TimelineCard';
+// import { typeIcons, typeLabels } from '../../Components/Timeline/TimeLineCard/TimelineCard';
 import TimelineCard from '../../Components/Timeline/TimeLineCard/TimelineCard';
 
 const FriendDetails = () => {
