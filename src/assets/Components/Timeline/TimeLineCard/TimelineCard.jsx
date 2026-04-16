@@ -17,6 +17,20 @@ export const typeLabels = {
 }
 
 const TimelineCard = ({item}) => {
+
+    const now = new Date();
+
+  const currentTime = now.toLocaleTimeString([], {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
+  const currentDate = now.toLocaleDateString([], {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  });
+
     return (
         <div className='flex gap-4 bg-white rounded-3xl p-4 mt-5 items-center'>
             <img 
@@ -28,7 +42,10 @@ const TimelineCard = ({item}) => {
                 <h1 className='text-2xl'>
                     {typeLabels[item.type]} <span className='font-semibold'>{item.name}</span>
                 </h1>
-                <p className='text-gray-500 text-sm'>{item.date}</p>
+               <p className="text-gray-500 text-sm">
+          <span>{currentTime} - </span>
+          {currentDate}
+        </p>
             </div>
         </div>
     );

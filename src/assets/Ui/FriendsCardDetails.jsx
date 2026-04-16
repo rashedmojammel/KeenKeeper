@@ -10,7 +10,7 @@ export const status = {
 
 const FriendsCardDetails = ({ friend, index }) => {
     return (
-        <div>
+        <div >
             <div key={index} className='mt-5'>
         <Link to={`/friendDetails/${friend.id}`} className="card bg-base-100 shadow-sm h-full">
           
