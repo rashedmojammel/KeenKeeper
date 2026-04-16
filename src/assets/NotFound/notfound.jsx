@@ -25,9 +25,6 @@ const NotFound = () => {
           Go Home
         </Link>
       </div>
-      <div className="mt-12 text-6xl animate-bounce">
-        🚫
-      </div>
     </div>
   );
 };
