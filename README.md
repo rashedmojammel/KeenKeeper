@@ -45,15 +45,4 @@ A live pie chart breaks down your communication habits by interaction type (Call
 <img width="1919" height="869" alt="image" src="https://github.com/user-attachments/assets/b5f9228d-9c1c-47e0-9180-a2f0d3bc2e93" />
 ### 6. Stats Page  :
 <img width="1919" height="629" alt="image" src="https://github.com/user-attachments/assets/4317c265-d846-4f8d-a554-549bb35f955d" />
-## 🚀 Getting Started
 
-```bash
-# Clone the repo
-git clone https://github.com/your-username/keenkeeper.git
-cd keenkeeper
-
-# Install dependencies
-npm install
-
-# Start the dev server
-npm run dev
