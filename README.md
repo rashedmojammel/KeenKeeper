@@ -28,7 +28,7 @@ Each friend has a contact goal (in days). KeenKeeper automatically flags them as
 Every call, text, or video session you log is stored in a filterable timeline. The history persists across sessions via localStorage, so your interaction log is always there when you need it.
 
 ### 3. 📊 Friendship Analytics
-A live pie chart breaks down your communication habits by interaction type (Call, Text, Video), giving you a visual snapshot of how you're staying connected with your circle.
+A live pie chart breaks down your communication habits by interaction type (Call, Text, Video), giving you a visual snapshot of how you are staying connected with your circle.
 
 ---
 ## ✨ Key Features
