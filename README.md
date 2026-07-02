@@ -2,7 +2,7 @@
 
 > *Your personal shelf of meaningful connections.*
 
-KeenKeeper is a relationship management app that helps you stay intentional about the friendships that matter most. Set contact goals, track interactions, and get nudged before you drift apart from the people you care about!!
+KeenKeeper is a relationship management app that helps you stay intentional about the friendships that matter most. Set contact goals, track interactions, and get nudged before you drift apart from the people you care about.
 
 ---
 
